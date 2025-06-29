@@ -12,6 +12,7 @@ import PaymentScreen from "../screens/PaymentScreen";
 import AvailableJobsScreen from "../screens/AvailableJobsScreen";
 import JobDetailScreen from "../screens/JobDetailScreen";
 import CompletedJobsScreen from "../screens/CompletedJobsScreen";
+import AdminDashboard from "../screens/AdminDashboard";
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,7 @@ export default function MainNavigator() {
       <Stack.Screen name="AvailableJobs" component={AvailableJobsScreen} />
       <Stack.Screen name="JobDetail" component={JobDetailScreen} />
       <Stack.Screen name="CompletedJobs" component={CompletedJobsScreen} />
+      <Stack.Screen name="AdminDashboard" component={AdminDashboard} />
     </Stack.Navigator>
   );
 }
