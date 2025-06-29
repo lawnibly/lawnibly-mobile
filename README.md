@@ -1,6 +1,6 @@
 # Lawnibly Mobile App
 
-This is the React Native (Expo) mobile app for [Lawnibly](https://lawnibly.com), a lawn care marketplace app modeled after LawnStarter and GreenPal.
+This is the React Native (Expo) mobile client for [Lawnibly](https://lawnibly.com), an upcoming lawn care marketplace inspired by services like LawnStarter and GreenPal. The project began following a discussion with Codex and will evolve into a full production app.
 
 ---
 
