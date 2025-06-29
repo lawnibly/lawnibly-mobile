@@ -1,31 +1,41 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, Alert } from 'react-native';
+import { apiRequest } from '../lib/api';
 
 export default function RegisterScreen({ navigation }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  function handleRegister() {
-    // TODO integrate register API
-    navigation.goBack();
+  async function handleRegister() {
+    if (!email || !password) return;
+    try {
+      await apiRequest('/api/auth/register', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+      });
+      Alert.alert('Account created', 'You can now log in');
+      navigation.goBack();
+    } catch (err) {
+      Alert.alert('Error', 'Could not register');
+    }
   }
 
   return (
-    <View style={{ padding: 16 }}>
-      <Text style={{ fontSize: 18, marginBottom: 8 }}>Register</Text>
+    <View className="flex-1 p-4 bg-white">
+      <Text className="text-xl font-semibold mb-4">Register</Text>
       <TextInput
         placeholder="Email"
         autoCapitalize="none"
         value={email}
         onChangeText={setEmail}
-        style={{ borderWidth: 1, marginBottom: 12, padding: 8 }}
+        className="border mb-4 p-2 rounded"
       />
       <TextInput
         placeholder="Password"
         secureTextEntry
         value={password}
         onChangeText={setPassword}
-        style={{ borderWidth: 1, marginBottom: 12, padding: 8 }}
+        className="border mb-4 p-2 rounded"
       />
       <Button title="Create Account" onPress={handleRegister} />
     </View>

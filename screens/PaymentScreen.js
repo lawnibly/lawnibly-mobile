@@ -1,10 +1,15 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React from 'react';
+import { View, Text, Button, Alert } from 'react-native';
 
 export default function PaymentScreen() {
+  function handlePay() {
+    // TODO integrate with Stripe
+    Alert.alert('Payment', 'Stripe checkout would appear here');
+  }
+
   return (
-    <View>
-      <Text>Payment Screen</Text>
+    <View className="flex-1 items-center justify-center bg-white">
+      <Button title="Pay Now" onPress={handlePay} />
     </View>
   );
 }
