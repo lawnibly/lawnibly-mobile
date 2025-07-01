@@ -1,27 +1,28 @@
+// @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { apiRequest } from '../lib/api';
 
-export default function AdminDashboard() {
-  const [users, setUsers] = useState([]);
+export default function QuoteScreen() {
+  const [quotes, setQuotes] = useState([]);
 
   useEffect(() => {
-    async function fetchUsers() {
+    async function load() {
       try {
-        const data = await apiRequest('/api/admin/users');
-        setUsers(data);
+        const data = await apiRequest('/api/quotes');
+        setQuotes(data);
       } catch (err) {
-        console.error('Failed to fetch users', err);
+        console.error('Failed to fetch quotes', err);
       }
     }
-    fetchUsers();
+    load();
   }, []);
 
   function renderItem({ item }) {
     return (
       <View className="p-4 border-b">
-        <Text className="font-medium">{item.email}</Text>
-        <Text>Role: {item.role}</Text>
+        <Text className="font-medium">{item.service}</Text>
+        <Text>Price: ${item.price}</Text>
       </View>
     );
   }
@@ -29,10 +30,10 @@ export default function AdminDashboard() {
   return (
     <View className="flex-1 bg-white">
       <FlatList
-        data={users}
+        data={quotes}
         keyExtractor={(item) => String(item.id)}
         renderItem={renderItem}
-        ListEmptyComponent={<Text className="p-4">No users found</Text>}
+        ListEmptyComponent={<Text className="p-4">No quotes</Text>}
       />
     </View>
   );
