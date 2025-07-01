@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useEffect } from "react";
 import { View, ActivityIndicator } from "react-native";
-import * as SecureStore from "expo-secure-store";
+import * as SecureStore from "../utils/secureStore";
 
 export default function SplashScreen({ navigation }) {
   useEffect(() => {
