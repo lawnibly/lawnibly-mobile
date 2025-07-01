@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import * as SecureStore from 'expo-secure-store';
+import * as SecureStore from '../utils/secureStore';
 
 export default function CustomerDashboard({ navigation }) {
   async function handleLogout() {

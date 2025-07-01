@@ -11,6 +11,6 @@ export async function apiRequest(path, options = {}) {
 }
 
 export async function getToken() {
-  const SecureStore = require('expo-secure-store');
+  const SecureStore = require('../utils/secureStore');
   return SecureStore.getItemAsync('token');
 }
