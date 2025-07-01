@@ -61,8 +61,15 @@ This is the React Native (Expo) mobile client for [Lawnibly](https://lawnibly.co
 # Install dependencies
 npm install
 
-# Start Expo
+# Copy env template and add your keys
+cp .env.example .env
+# Then edit `.env` and add your Google Places API key
+
+# Start Expo (mobile)
 npx expo start
+
+# Or run the web version
+npx expo start --web
 ```
 
 ---

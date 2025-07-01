@@ -11,7 +11,7 @@ export default function AddressAutocomplete({ onAddressSelected }) {
         onPress={(data, details = null) => onAddressSelected(data, details)}
         fetchDetails
         query={{
-          key: process.env.EXPO_PUBLIC_GOOGLE_PLACES_KEY || 'YOUR_GOOGLE_API_KEY',
+          key: process.env.EXPO_PUBLIC_GOOGLE_PLACES_KEY,
           language: 'en',
         }}
         styles={{
