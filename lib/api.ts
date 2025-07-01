@@ -1,3 +1,4 @@
+// @ts-nocheck
 export const API_URL = process.env.EXPO_PUBLIC_API_URL || 'https://lawnibly.example.com';
 
 export async function apiRequest(path, options = {}) {

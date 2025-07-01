@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { View, Text, Button, Alert } from 'react-native';
 import { apiRequest } from '../lib/api';

@@ -6,7 +6,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build": "tsc"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.7",
@@ -25,7 +26,10 @@
     "react-native-web": "0.19.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "typescript": "^5.2.2",
+    "@types/react": "^18.2.21",
+    "@types/react-native": "^0.72.5"
   },
   "private": true
 }
